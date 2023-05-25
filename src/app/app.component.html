@@ -2,14 +2,8 @@
   <h1>Hello, this is appcomponent html</h1>
 </div>
 
-<div [ngSwitch]="role">
-  <div *ngSwitchCase="'User'">
-    Welcome User!
-  </div>
-  <div *ngSwitchCase="'Admin'">
-    <app-rooms></app-rooms>
-  </div>
-  <div *ngSwitchDefault>
-    You are not authorized to view this page.
-  </div>
+<!-- Template reference-->
+
+<div>
+  <ng-template #user></ng-template>
 </div>
