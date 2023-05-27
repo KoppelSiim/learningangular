@@ -8,13 +8,16 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoomsListComponent } from './rooms/rooms-list/rooms-list.component';
 import { HeaderComponent } from './header/header.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { APP_CONFIG, APP_SERVICE_CONFIG } from './appConfig/appconfig.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoomsComponent,
     RoomsListComponent,
-    HeaderComponent
+    HeaderComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,12 @@ import { HeaderComponent } from './header/header.component';
     NgbModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_SERVICE_CONFIG,
+      useValue: APP_CONFIG
+    },
+  ],
   bootstrap: [AppComponent,RoomsComponent]
 })
 export class AppModule { }
